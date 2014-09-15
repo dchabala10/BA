@@ -1,0 +1,36 @@
+<?php
+
+//will prevent conflicts
+require_once('flavors.php');
+
+class Cone {
+
+	private $typeDessert = "Ice Cream in a Waffle Cone";
+    private $scoops;
+
+
+    public function setScoops($flavor1, $flavor2){
+       $argumentArray = func_get_args();
+        foreach($argumentArray as $argument){
+            $this->scoops[] = $argument;
+        }
+    }
+
+    public function getScoops(){
+        echo "Of the two scoops you can choose, you chose: ";
+        return $this->scoops;
+    }
+
+	public function getTypeDessert(){
+		return "Type of Dessert: " . $this->typeDessert . "<br>";
+	}
+
+    public function applyDiscount($price, $discount){
+        $finalPrice = $price - ($price * $discount);
+        return "Your final price is: $" .  $finalPrice;
+    }
+
+} // Cone
+
+
+
