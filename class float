@@ -1,0 +1,46 @@
+<?php
+
+require_once('flavors.php');
+
+class Float {
+
+	private $typeDessert = "Float in a Cup";
+    private $floatFlavor;
+    private $sodas;
+
+
+    public function getTypeDessert(){
+        return "Type of Dessert: " . $this->typeDessert . "<br>";
+    }
+
+    public function setScoops($floatFlavor1, $floatFlavor2, $floatFlavor3, $floatFlavor4, $floatFlavor5){
+        $argumentsArray = func_get_args();
+            foreach($argumentsArray as $argument){
+                $this->floatFlavor[] = $argument;
+        }
+    }
+
+    public function getScoops(){
+        echo "You chose these flavors: ";
+        return $this->floatFlavor;
+    }
+
+    public function setSoda($soda1, $soda2, $soda3){
+        $argumentsArray = func_get_args();
+            foreach($argumentsArray as $argument){
+                $this->sodas[] = $argument;
+        }
+    }
+
+    public function getSoda(){
+        echo "Your Soda of Choice: ";
+        return $this->sodas;
+    }
+
+    public function applyDiscount($price, $discount){
+        $finalPrice = $price - ($price * $discount);
+        return "Your final price is: $" .  $finalPrice;
+    }
+
+} //Float
+
