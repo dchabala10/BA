@@ -1,0 +1,58 @@
+<?php
+
+require_once('cone.php');
+require_once('milkshake.php');
+require_once('float.php');
+
+echo "Our Ice Cream Flavors: " . Flavors::getAllIcFlavors();
+echo "Our Types of Milk: " . Flavors::getAllMilkFlavors();
+echo "Our Sodas: " . Flavors::getAllSodaFlavors();
+
+$icCone = new Cone;
+echo $icCone->getTypeDessert();
+
+$icCone->setScoops(Flavors::CHOCOLATE, Flavors::VANILLA);
+$scoops = $icCone->getScoops();
+
+echo $scoops[0];
+echo Flavors::SEP . $scoops[1] . "<br>";
+//Cones do not get discount
+echo $icCone->applyDiscount(10, 0) . "<br><br>";
+
+
+
+
+$icMilkshake = new Milkshake;
+echo $icMilkshake->getTypeDessert();
+
+
+$icMilkshake->setFlavor(Flavors::CHOCOLATE, Flavors::MINT, Flavors::STRAWBERRY, Flavors::SUPERMAN, Flavors::VANILLA);
+$flavors = $icMilkshake->getFlavor();
+echo $flavors[0] . "<br>";
+
+$icMilkshake->setMilk(Flavors::WHOLE, Flavors::PERCENT, Flavors::SKIM);
+$milk = $icMilkshake->getMilk();
+echo $milk[1] . "<br>";
+
+echo $icMilkshake->applyDiscount(10, 0.5) . "<br><br>";
+
+
+$icFloat = new Float();
+echo $icFloat->getTypeDessert();
+
+$icFloat->setScoops(Flavors::CHOCOLATE, Flavors::MINT, Flavors::STRAWBERRY, Flavors::SUPERMAN, Flavors::VANILLA);
+$floatFlavor = $icFloat->getScoops();
+echo $floatFlavor[0] . Flavors::SEP;
+echo $floatFlavor[1] . Flavors::SEP;
+echo $floatFlavor[1] . Flavors::SEP;
+echo $floatFlavor[2] . Flavors::SEP;
+echo $floatFlavor[3] . Flavors::SEP;
+echo $floatFlavor[3] . Flavors::SEP;
+echo $floatFlavor[4] . "<br>";
+
+$icFloat->setSoda(Flavors::COKE, Flavors::SPRITE, Flavors::FANTA);
+$sodas = $icFloat->getSoda();
+echo $sodas[1] . "<br>";
+
+echo $icFloat->applyDiscount(10, 0.7);
+
