@@ -1,0 +1,62 @@
+<?php
+
+require_once('flavors.php');
+
+class Milkshake{
+
+	 private $typeDessert = 'Milkshake in a Cup';
+     private $flavors;
+     private $milk;
+
+
+	 public function getTypeDessert(){
+	 	return "Type of Dessert: " . $this->typeDessert . "<br>";
+	 }
+
+	 public function setFlavor($flavor1, $flavor2, $flavor3, $flavor4, $flavor5){
+         $argumentsArray = func_get_args();
+            foreach($argumentsArray as $argument){
+                 $this->flavors[] = $argument;
+         }
+   	}
+
+     public function getFlavor(){
+         echo "Of the flavors, you chose: ";
+         return $this->flavors;
+
+     }
+
+     public function setMilk($milk1, $milk2, $milk3){
+        $argumentsArray = func_get_args();
+            foreach($argumentsArray as $argument){
+                $this->milk[] = $argument;
+         }
+     }
+
+    public function getMilk(){
+        echo "Of the milks you can choose, you chose: ";
+        return $this->milk;
+    }
+
+    public function applyDiscount($price, $discount){
+        $finalPrice = $price - ($price * $discount);
+        return "Your final price is: $" .  $finalPrice;
+    }
+
+
+
+}//Milkshake
+
+
+
+
+
+
+
+
+
+
+
+
+
+
