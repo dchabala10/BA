@@ -1,0 +1,32 @@
+<?php
+ class Flavors{
+    const CHOCOLATE = 'Chocolate';
+    const VANILLA ='Vanilla';
+    const STRAWBERRY = 'Strawberry';
+    const MINT = 'Mint';
+    const SUPERMAN = 'Superman';
+    const SEP = ', ';
+
+
+    const SKIM = 'Skim';
+    const PERCENT = 'Two Percent';
+    const WHOLE = 'Whole';
+
+    const COKE = 'Coke';
+    const SPRITE = 'Sprite';
+    const FANTA = 'Fanta';
+
+    public static function getAllIcFlavors(){
+        return  Flavors::CHOCOLATE . Flavors::SEP . Flavors::VANILLA . Flavors::SEP .
+        Flavors::STRAWBERRY . Flavors::SEP . Flavors::MINT . Flavors::SEP .
+        Flavors::SUPERMAN . "<br>";
+    }
+
+    public static function getAllMilkFlavors(){
+        return Flavors::SKIM. Flavors::SEP . Flavors::PERCENT . Flavors::SEP . Flavors::WHOLE . "<br>";
+    }
+
+    public static function getAllSodaFlavors(){
+        return Flavors::COKE. Flavors::SEP . Flavors::SPRITE . Flavors::SEP . Flavors::FANTA . "<br><br>";
+    }
+} //Flavors
